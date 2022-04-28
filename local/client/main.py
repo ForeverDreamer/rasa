@@ -1,11 +1,7 @@
-import requests as http
+from pprint import pprint as pp
 
-rv = http.post(
-    url='http://localhost:5005/webhooks/rest/webhook',
-    json={
-        "sender": "test_user",
-        "message": "Hi"
-    }
-)
+from client.utils import *
 
-print(rv.json())
+pp(send_message('你真是帮了大忙'))
+# pp(status())
+# pp(parse('你真是帮了大忙'))
