@@ -1,0 +1,33 @@
+version: "3.1"
+stories:
+  - story: search_venues
+    steps:
+    - intent: search_venues
+    - action: action_search_venues
+    - slot_was_set:
+      - venues: [{"name": "国家大剧院", "reviews": 5.0}]
+
+  - story: search_concerts
+    steps:
+    - intent: search_concerts
+    - action: action_search_concerts
+    - slot_was_set:
+      - concerts: [{"artist": "周杰伦", "reviews": 5.0}]
+
+  - story: compare_reviews_venues
+    steps:
+    - intent: search_venues
+    - action: action_search_venues
+    - slot_was_set:
+      - venues: [{"name": "国家大剧院", "reviews": 5.0}]
+    - intent: compare_reviews
+    - action: action_show_venue_reviews
+
+  - story: compare_reviews_concerts
+    steps:
+    - intent: search_concerts
+    - action: action_search_concerts
+    - slot_was_set:
+      - concerts: [{"artist": "周杰伦", "reviews": 5.0}]
+    - intent: compare_reviews
+    - action: action_show_concert_reviews

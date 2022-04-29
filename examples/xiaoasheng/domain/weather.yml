@@ -1,0 +1,45 @@
+version: "3.1"
+
+intents:
+  - request_weather
+
+entities:
+  - date_time
+  - address
+
+slots:
+  date_time:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: date_time
+        intent: request_weather
+  address:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: address
+        intent: request_weather
+
+responses:
+  utter_ask_weather_form_date_time:
+    - text: "哪一天啊？"
+  utter_ask_weather_form_address:
+    - text: "哪里呀？"
+  utter_submit:
+    - text: "收到!"
+  utter_slots_values:
+    - text: "查询条件:\n
+             - 日期: {date_time}\n
+             - 地址: {address}"
+
+forms:
+  weather_form:
+    ignored_intents:
+      - whoareyou
+      - whattodo
+    required_slots:
+      - date_time
+      - address

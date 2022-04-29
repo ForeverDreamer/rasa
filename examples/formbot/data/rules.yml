@@ -28,7 +28,7 @@ rules:
 
   - rule: submit form
     condition:
-    - active_loop: restaurant_form
+      - active_loop: restaurant_form
     steps:
       - action: restaurant_form
       - active_loop: null
