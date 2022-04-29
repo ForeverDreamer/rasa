@@ -43,3 +43,6 @@ forms:
     required_slots:
       - date_time
       - address
+
+actions:
+  - action_weather_form

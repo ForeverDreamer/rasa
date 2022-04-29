@@ -1,26 +1,31 @@
 version: "3.1"
 rules:
-  - rule: fallback
+  - rule: 未知问题
     steps:
       - intent: nlu_fallback
       - action: utter_default
 
-  - rule: greet
+  - rule: 打招呼
     steps:
       - intent: greet
       - action: utter_greet
 
-  - rule: thanks
+  - rule: 感谢
     steps:
       - intent: thanks
       - action: utter_thanks
 
-  - rule: goodbye
+  - rule: 再见
     steps:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: whattodo
+  - rule: 机器人功能
     steps:
       - intent: whattodo
       - action: utter_whattodo
+
+  - rule: 清除机器人记忆
+    steps:
+      - intent: clear_memory
+      - action: action_clear_memory

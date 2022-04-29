@@ -108,3 +108,10 @@ nlu:
       - 你长得很美，就不要想得太美。
       - 拒绝
       - 不行
+
+  # 多写一些examples有助于提示intent识别的准确性
+  - intent: clear_memory
+    examples: |
+      - 清除记忆
+      - 清除机器人当前会话的记忆
+      - 清除当前会话

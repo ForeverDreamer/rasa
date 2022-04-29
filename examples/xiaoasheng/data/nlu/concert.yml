@@ -2,11 +2,13 @@ version: "3.1"
 nlu:
   - intent: search_concerts
     examples: |
-      - 找几场好的音乐会
-      - 音乐会
+      - 给我找几场好的音乐会
+      - 帮我找几场音乐会
+      - 搜索音乐会
 
   - intent: search_venues
     examples: |
+      - 给我找些好的场地
       - 找几个场地
       - 查询场地
 

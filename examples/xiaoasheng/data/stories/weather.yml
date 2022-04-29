@@ -10,8 +10,9 @@ stories:
       - intent: affirm
       - action: weather_form
       - active_loop: null
-      - action: utter_submit
-      - action: utter_slots_values
+#      - action: utter_submit
+#      - action: utter_slots_values
+      - action: action_weather_form
 
   - story: stop form + stop
     steps:
