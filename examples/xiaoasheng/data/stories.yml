@@ -43,7 +43,18 @@ stories:
 #      - intent: stop
 #      - action: utter_ask_continue
 #      - intent: affirm
-#      - action: restaurant_form
+#      - action: weather_form
 #      - active_loop: null
 #      - action: utter_submit
 #      - action: utter_slots_values
+#
+#  - story: stop form + stop
+#    steps:
+#      - intent: request_weather
+#      - action: weather_form
+#      - active_loop: weather_form
+#      - intent: stop
+#      - action: utter_ask_continue
+#      - intent: deny
+#      - action: action_deactivate_loop
+#      - active_loop: null
