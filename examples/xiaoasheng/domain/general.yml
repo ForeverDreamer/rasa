@@ -8,6 +8,8 @@ intents:
   - thanks
   - whoareyou
   - whattodo
+  - stop
+  - clear_memory
 
 responses:
   utter_greet:

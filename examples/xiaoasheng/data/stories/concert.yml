@@ -5,21 +5,30 @@ stories:
     - intent: search_venues
     - action: action_search_venues
     - slot_was_set:
-      - venues: [{"name": "国家大剧院", "reviews": 5.0}]
+      - venues: [
+            {"name": "罗马大斗兽场", "reviews": 4.5},
+            {"name": "岩石地窖", "reviews": 5.0},
+        ]
 
   - story: search_concerts
     steps:
     - intent: search_concerts
     - action: action_search_concerts
     - slot_was_set:
-      - concerts: [{"artist": "周杰伦", "reviews": 5.0}]
+      - concerts: [
+            {"artist": "喷火战机", "reviews": 4.5},
+            {"artist": "凯蒂·派瑞", "reviews": 5.0},
+        ]
 
   - story: compare_reviews_venues
     steps:
     - intent: search_venues
     - action: action_search_venues
     - slot_was_set:
-      - venues: [{"name": "国家大剧院", "reviews": 5.0}]
+      - venues: [
+            {"name": "罗马大斗兽场", "reviews": 4.5},
+            {"name": "岩石地窖", "reviews": 5.0},
+        ]
     - intent: compare_reviews
     - action: action_show_venue_reviews
 
@@ -28,6 +37,9 @@ stories:
     - intent: search_concerts
     - action: action_search_concerts
     - slot_was_set:
-      - concerts: [{"artist": "周杰伦", "reviews": 5.0}]
+      - concerts: [
+            {"artist": "喷火战机", "reviews": 4.5},
+            {"artist": "凯蒂·派瑞", "reviews": 5.0},
+        ]
     - intent: compare_reviews
     - action: action_show_concert_reviews
