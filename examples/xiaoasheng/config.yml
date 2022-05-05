@@ -9,6 +9,8 @@ pipeline:
   - name: "RegexFeaturizer"
   - name: "MitieFeaturizer"
   - name: "SklearnIntentClassifier"
+  - name: "FallbackClassifier"
+    threshold: 0.25
 
 policies:
   - name: TEDPolicy
@@ -17,4 +19,10 @@ policies:
     batch_size: 50
     max_training_samples: 300
   - name: MemoizationPolicy
+    max_history: 5
   - name: RulePolicy
+    core_fallback_threshold: 0.2
+    core_fallback_action_name: action_default_fallback
+    enable_fallback_prediction: true
+    restrict_rules: true
+    check_for_contradictions: true

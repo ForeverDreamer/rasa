@@ -1,3 +1,5 @@
+import random
+
 from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
 
@@ -7,10 +9,16 @@ class ActionSearchConcerts(Action):
         return "action_search_concerts"
 
     def run(self, dispatcher, tracker, domain):
+        if random.random() < 0.5:
+            print("搜索音乐会结果为空")
+            dispatcher.utter_message(text="没找到可观看的音乐会！")
+            return [SlotSet("concerts")]
+
         concerts = [
             {"artist": "喷火战机", "reviews": 4.5},
             {"artist": "凯蒂·派瑞", "reviews": 5.0},
         ]
+        dispatcher.utter_message(text="我找到以下音乐会")
         description = ", ".join([c["artist"] for c in concerts])
         dispatcher.utter_message(text=f"{description}")
         return [SlotSet("concerts", concerts)]
@@ -21,6 +29,11 @@ class ActionSearchVenues(Action):
         return "action_search_venues"
 
     def run(self, dispatcher, tracker, domain):
+        if random.random() < 0.5:
+            print("搜索场地结果为空")
+            dispatcher.utter_message(text="没找到可用的场地！！")
+            return [SlotSet("venues")]
+
         venues = [
             {"name": "罗马大斗兽场", "reviews": 4.5},
             {"name": "岩石地窖", "reviews": 5.0},

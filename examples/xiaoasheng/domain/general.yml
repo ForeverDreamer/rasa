@@ -43,7 +43,7 @@ responses:
     - text: "没听懂，请换种说法吧~"
 
 actions:
-  - action_default_fallback
+#  - action_default_fallback
   - action_clear_memory
 
 session_config:

@@ -20,6 +20,12 @@ slots:
     mappings:
     - type: custom
 
+#responses:
+#  utter_venues_not_found:
+#    - text: "对不起，没找到可用场地！"
+#  utter_concerts_not_found:
+#    - text: "对不起，没找到可观看的音乐会！"
+
 actions:
   - action_search_concerts
   - action_search_venues

@@ -1,6 +1,6 @@
 version: "3.1"
 stories:
-  - story: search_venues
+  - story: search and found venues
     steps:
     - intent: search_venues
     - action: action_search_venues
@@ -10,7 +10,15 @@ stories:
             {"name": "岩石地窖", "reviews": 5.0},
         ]
 
-  - story: search_concerts
+#  - story: search and not found venues
+#    steps:
+#      - intent: search_venues
+#      - action: action_search_venues
+#      - slot_was_set:
+#          - venues: null
+#      - action: utter_venues_not_found
+
+  - story: search and found concerts
     steps:
     - intent: search_concerts
     - action: action_search_concerts
@@ -19,6 +27,14 @@ stories:
             {"artist": "喷火战机", "reviews": 4.5},
             {"artist": "凯蒂·派瑞", "reviews": 5.0},
         ]
+
+#  - story: search and not found concerts
+#    steps:
+#      - intent: search_concerts
+#      - action: action_search_concerts
+#      - slot_was_set:
+#          - venues: null
+#      - action: utter_concerts_not_found
 
   - story: compare_reviews_venues
     steps:

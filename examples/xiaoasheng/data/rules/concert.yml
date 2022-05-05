@@ -1,0 +1,17 @@
+#version: "3.1"
+#rules:
+#  - rule: search and not found venues
+#    steps:
+#      - intent: search_venues
+#      - action: action_search_venues
+#      - slot_was_set:
+#          - venues: null
+#      - action: utter_venues_not_found
+#
+#  - rule: search and not found concerts
+#    steps:
+#      - intent: search_concerts
+#      - action: action_search_concerts
+#      - slot_was_set:
+#          - venues: null
+#      - action: utter_concerts_not_found
