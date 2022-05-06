@@ -1,0 +1,125 @@
+{
+    "restaurant": [
+        {
+            "id": 0,
+            "name": "麦当劳",
+            "cuisine": "意大利",
+            "outside-seating": "是",
+            "price-range": "mid-range"
+        },
+        {
+            "id": 1,
+            "name": "肯德基",
+            "cuisine": "墨西哥",
+            "outside-seating": "否",
+            "price-range": "cheap"
+        },
+        {
+            "id": 2,
+            "name": "必胜客",
+            "cuisine": "意大利",
+            "outside-seating": "是",
+            "price-range": "mid-range"
+        },
+        {
+            "id": 3,
+            "name": "味千拉面",
+            "cuisine": "越南",
+            "outside-seating": "是",
+            "price-range": "cheap"
+        },
+        {
+            "id": 4,
+            "name": "真功夫",
+            "cuisine": "德国",
+            "outside-seating": "是",
+            "price-range": "mid-range"
+        },
+        {
+            "id": 5,
+            "name": "永和大王",
+            "cuisine": "日本",
+            "outside-seating": "否",
+            "price-range": "cheap"
+        },
+        {
+            "id": 6,
+            "name": "大娘水饺",
+            "cuisine": "朝鲜",
+            "outside-seating": "是",
+            "price-range": "cheap"
+        }
+    ],
+    "hotel": [
+        {
+            "id": 0,
+            "name": "希尔顿",
+            "price-range": "expensive",
+            "breakfast-included": "是",
+            "city": "北京",
+            "free-wifi": "是",
+            "star-rating": 5,
+            "swimming-pool": "是"
+        },
+        {
+            "id": 1,
+            "name": "万豪",
+            "price-range": "expensive",
+            "breakfast-included": "是",
+            "city": "上海",
+            "free-wifi": "是",
+            "star-rating": 4,
+            "swimming-pool": "否"
+        },
+        {
+            "id": 2,
+            "name": "汉庭",
+            "price-range": "mid-range",
+            "breakfast-included": "否",
+            "city": "天津",
+            "free-wifi": "否",
+            "star-rating": 1,
+            "swimming-pool": "否"
+        },
+        {
+            "id": 3,
+            "name": "速8",
+            "price-range": "cheap",
+            "breakfast-included": "否",
+            "city": "重庆",
+            "free-wifi": "是",
+            "star-rating": 2,
+            "swimming-pool": "否"
+        },
+        {
+            "id": 4,
+            "name": "如家",
+            "price-range": "expensive",
+            "breakfast-included": "是",
+            "city": "成都",
+            "free-wifi": "是",
+            "star-rating": 3,
+            "swimming-pool": "否"
+        },
+        {
+            "id": 5,
+            "name": "锦江之星",
+            "price-range": "cheap",
+            "breakfast-included": "是",
+            "city": "深圳",
+            "free-wifi": "否",
+            "star-rating": 2,
+            "swimming-pool": "否"
+        },
+        {
+            "id": 6,
+            "name": "如家",
+            "price-range": "mid-range",
+            "breakfast-included": "是",
+            "city": "广州",
+            "free-wifi": "是",
+            "star-rating": 3,
+            "swimming-pool": "是"
+        }
+    ]
+}
