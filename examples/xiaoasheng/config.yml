@@ -4,6 +4,7 @@ pipeline:
   - name: "MitieNLP"
     model: "examples/xiaoasheng/data/total_word_feature_extractor_zh.dat"
   - name: "JiebaTokenizer"
+  - name: "RegexEntityExtractor"
   - name: "MitieEntityExtractor"
   - name: "EntitySynonymMapper"
   - name: "RegexFeaturizer"

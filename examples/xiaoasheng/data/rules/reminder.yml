@@ -1,0 +1,26 @@
+version: "3.1"
+rules:
+  - rule: ask set reminder
+    steps:
+      - intent: ask_set_reminder
+      - action: action_set_reminder
+
+  - rule: forget reminder
+    steps:
+      - intent: ask_forget_reminders
+      - action: action_forget_reminders
+
+  - rule: action tell id
+    steps:
+      - intent: ask_id
+      - action: action_tell_id
+
+  - rule: react to call reminder
+    steps:
+      - intent: action_call_reminder_intent
+      - action: action_react_to_call_reminder
+
+  - rule: react to water reminder
+    steps:
+      - intent: action_water_reminder_intent
+      - action: action_react_to_water_dry

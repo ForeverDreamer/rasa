@@ -1,0 +1,40 @@
+version: "3.1"
+
+intents:
+  - ask_set_reminder
+  - ask_forget_reminders
+  - action_call_reminder_intent
+  - action_water_reminder_intent
+  - ask_id
+
+entities:
+  - intent_type
+  - person
+  - plant
+
+slots:
+  intent_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: intent_name
+  person:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: person
+  plant:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: plant
+
+actions:
+  - action_set_reminder
+  - action_forget_reminders
+  - action_react_to_call_reminder
+  - action_react_to_water_dry
+  - action_tell_id

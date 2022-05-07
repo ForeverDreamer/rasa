@@ -1,0 +1,41 @@
+version: "3.1"
+nlu:
+  - intent: ask_set_reminder
+    examples: |
+      - 提醒我给[张三]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 提醒我给[李四]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 提醒我给[周杰伦]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 提醒我给[刘亦菲]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我晚点要给[谢霆锋]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我晚点要给[王菲]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我晚点需要给[陈奕迅]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 请提醒我给[刘德华]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 请提醒我给[刘耕宏]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我一定不能忘记给[胡歌]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我一定不能忘记给[彭于晏]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 我一定不能忘记给[黄渤]{"entity": "person"}[打电话]{"entity": "intent_name", "value": "action_call_reminder_intent"}
+      - 提醒我给[玫瑰]{"entity": "plant"}[浇水]{"entity": "intent_name", "value": "action_water_reminder_intent"}
+      - 我晚点要给[百合]{"entity": "plant"}[浇水]{"entity": "intent_name", "value": "action_water_reminder_intent"}
+      - 请提醒我给[月季]{"entity": "plant"}[浇水]{"entity": "intent_name", "value": "action_water_reminder_intent"}
+      - 我一定不能忘记[牡丹]{"entity": "plant"}[浇水]{"entity": "intent_name", "value": "action_water_reminder_intent"}
+
+  - intent: ask_id
+    examples: |
+      - 会话id是多少?
+      - id
+      - 当前会话的id是什么?
+      - 我怎么发送POST请求给当前会话?
+
+  - intent: ask_forget_reminders
+    examples: |
+      - 算了不用提醒了
+      - 不用提醒我了!
+      - 忘掉提醒我这事儿
+      - 不要提醒我
+      - 取消提醒
+      - 请取消提醒
+
+  - lookup: intent_name
+    examples: |
+      - 浇水
+      - 打电话
