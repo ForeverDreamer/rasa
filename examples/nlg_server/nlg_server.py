@@ -53,6 +53,7 @@ async def generate_response(nlg_call, domain):
     events = nlg_call.get("tracker", {}).get("events")
     tracker = DialogueStateTracker.from_dict(sender_id, events, domain.slots)
     channel_name = nlg_call.get("channel")
+    print('nlg_call response: ', response)
 
     return await TemplatedNaturalLanguageGenerator(domain.responses).generate(
         response, tracker, channel_name, **kwargs
@@ -75,6 +76,7 @@ def run_server(domain, port, workers):
         port=port,
         workers=workers,
         backlog=int(os.environ.get(ENV_SANIC_BACKLOG, "100")),
+        debug=True,
     )
 
 

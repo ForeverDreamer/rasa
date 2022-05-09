@@ -11,7 +11,7 @@ def create_app() -> Sanic:
     def print_response(request: Request) -> HTTPResponse:
         """Print bot response to the console."""
         bot_response = request.json.get("text")
-        print(f"\n{bot_response}")
+        print(f"\ncallback_server: {bot_response}")
 
         body = {"status": "message sent"}
         return response.json(body, status=200)
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     port = 5034
 
     print(f"Starting callback server on port {port}.")
-    app.run("0.0.0.0", port)
+    app.run("0.0.0.0", port, debug=True)

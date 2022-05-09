@@ -1,5 +1,6 @@
 HOST = 'http://localhost:5005'
-SEND_MESSAGE_URL = '/webhooks/rest/webhook'
+REST_MESSAGE_URL = '/webhooks/rest/webhook'
+CALLBACK_MESSAGE_URL = '/webhooks/callback/webhook'
 STATUS_URL = '/status'
 PARSE_URL = '/model/parse'
 

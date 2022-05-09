@@ -28,14 +28,14 @@ class ActionSetReminder(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
+        intent_name = tracker.get_slot("intent_name")
+        dispatcher.utter_message(f"我10秒钟之后提醒您<{intent_name}>.")
 
-        dispatcher.utter_message("I will remind you in 5 seconds.")
-
-        date = datetime.datetime.now() + datetime.timedelta(seconds=5)
+        date = datetime.datetime.now() + datetime.timedelta(seconds=10)
         entities = tracker.latest_message.get("entities")
 
         reminder = ReminderScheduled(
-            intent_name=tracker.get_slot("intent_name"),
+            intent_name=intent_name,
             trigger_date_time=date,
             entities=entities,
             # name="my_reminder",
@@ -55,10 +55,11 @@ class ForgetReminders(Action):
         self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("Okay, I'll cancel all your reminders.")
+        intent_name = tracker.get_slot("intent_name")
+        dispatcher.utter_message(f"好的取消提醒<{intent_name}>.")
 
         # Cancel all reminders
-        return [ReminderCancelled(intent_name=tracker.get_slot("intent_name"))]
+        return [ReminderCancelled(intent_name=intent_name)]
 
 
 class ActionReactToCallReminder(Action):
@@ -74,8 +75,8 @@ class ActionReactToCallReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        name = next(tracker.get_slot("person"), "<someone>")
-        dispatcher.utter_message(f"Remember to call {name}!")
+        name = tracker.get_slot("person")
+        dispatcher.utter_message(f"记得给<{name}>打电话哦!")
 
         return [SlotSet("intent_name", None), SlotSet("person", None)]
 
@@ -94,7 +95,7 @@ class ActionReactToWaterDry(Action):
     ) -> List[Dict[Text, Any]]:
 
         plant = next(tracker.get_latest_entity_values("plant"), "<plant_name>")
-        dispatcher.utter_message(f"Your {plant} needs some water!")
+        dispatcher.utter_message(f"你的<{plant}>口渴了!")
 
         return [SlotSet("intent_name", None), SlotSet("plant", None)]
 

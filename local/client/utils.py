@@ -3,19 +3,34 @@ import requests as http
 from client.constants import *
 
 
-def get_response(rv):
+def rest_response(rv):
     return rv.json() if rv.status_code == 200 else rv.text
 
 
-def send_message(message):
+def callback_response(rv):
+    return rv.status_code, rv.text
+
+
+def send_rest_message(message):
     rv = http.post(
-        url=HOST+SEND_MESSAGE_URL,
+        url=HOST+REST_MESSAGE_URL,
         json={
             "sender": SENDER_ID,
             "message": message
         }
     )
-    return get_response(rv)
+    return rest_response(rv)
+
+
+def send_callback_message(message):
+    rv = http.post(
+        url=HOST+CALLBACK_MESSAGE_URL,
+        json={
+            "sender": SENDER_ID,
+            "message": message
+        }
+    )
+    return callback_response(rv)
 
 
 def status():

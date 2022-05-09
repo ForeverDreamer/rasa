@@ -8,7 +8,7 @@ intents:
   - ask_id
 
 entities:
-  - intent_type
+  - intent_name
   - person
   - plant
 
